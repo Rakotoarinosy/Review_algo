@@ -9,7 +9,7 @@ def tri_a_bulles(arr):
 
 arr = [64,90,34,25,12,22,11]
 tri_a_bulles(arr)
-print("Tableau trié: ")
+print("Tri a bulle \n     Tableau trié: ")
 print(arr)
 
 ################# Tri par sélection #################
@@ -24,7 +24,7 @@ def tri_par_selection(arr):
                 arr[i], arr[min_index] = arr[min_index], arr[i]
                 
 tri_par_selection(arr)
-print("Tableau trié: ")
+print("Tri par selection \n     Tableau trié: ")
 print(arr)
 
 
@@ -38,6 +38,22 @@ def tri_par_insertion(arr):
             j-=1
             arr[j+1] = cle
 tri_par_insertion(arr)
-print("Tableau trié: ")
+print("Tri par insertion \n     Tableau trié: ")
+
+print(arr)
+
+
+################# Tri rapide #################
+def tri_rapide(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr)//2]
+    elements_inf = [x for x in arr if x < pivot]
+    elements_eq = [x for x in arr if x == pivot]
+    elements_sup = [x for x in arr if x > pivot]
+    return tri_rapide(elements_inf) + elements_eq + tri_rapide(elements_sup)
+
+tri_rapide(arr)
+print("Tri rapide \n    Tableau trié: ")
 
 print(arr)
