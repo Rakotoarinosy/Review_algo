@@ -57,3 +57,34 @@ tri_rapide(arr)
 print("Tri rapide \n    Tableau trié: ")
 
 print(arr)
+
+################# Tri fisuion #################
+arr = [64,25,12,22,11]
+def tri_fusion(arr):
+    if len(arr) <= 1:
+        return arr
+    milieu = len(arr)//2
+    gauche = arr[:milieu]
+    droite = arr[milieu:]
+    gauche = tri_fusion(gauche)
+    droite = tri_fusion(droite)
+    
+    return fusionner(gauche,droite)
+
+def fusionner(gauche,droite):
+    resultat = []
+    i = j = 0
+    while i < len(gauche) and j < len(droite):
+        if gauche[i] < droite[j]:
+            resultat.append(gauche[i])
+            i+=1
+        else:
+            resultat.append(droite[j])
+            j+=1
+            resultat.extend(gauche[i:])
+            resultat.extend(droite[j:])
+        return resultat
+
+arr_trie = tri_fusion(arr)
+print("Tableau trié: ")
+print(arr_trie)           
