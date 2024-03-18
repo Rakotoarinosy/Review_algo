@@ -81,9 +81,9 @@ def fusionner(gauche,droite):
         else:
             resultat.append(droite[j])
             j+=1
-            resultat.extend(gauche[i:])
-            resultat.extend(droite[j:])
-        return resultat
+    resultat.extend(gauche[i:])
+    resultat.extend(droite[j:])
+    return resultat
 
 arr_trie = tri_fusion(arr)
 print("Tableau trié: ")
