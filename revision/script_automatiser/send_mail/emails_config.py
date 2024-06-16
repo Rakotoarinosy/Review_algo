@@ -5,8 +5,8 @@ from email.mime.text import MIMEText
 
 config_server = "smtp.gmail.com"
 config_server_port = 587
-config_email = "fehizoroarinosy@gmail.com"
-config_password = "qpuzgskadgesIqtn"
+config_email = "sendermail@gmail.com"
+config_password = "password"
 
 def envoyer_email(email_destinataire, sujet, message):
     multipart_message = MIMEMultipart()
@@ -31,4 +31,4 @@ Cordialement,
 Fehizoro Andry RAKOTOARINOSY.
 """
     
-envoyer_email("savakalucien@gmail.com","Test send Email by script Python",message_email)
+envoyer_email("receiver@gmail.com","Test send Email by script Python",message_email)
